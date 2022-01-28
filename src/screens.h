@@ -42,6 +42,7 @@ extern GameScreen currentScreen;
 extern Font font;
 extern Music music;
 extern Sound fxCoin;
+extern Sound fxHit;
 extern Texture2D backgroundTexture;
 extern int maxScore;
 extern int score;

@@ -59,6 +59,7 @@ void UpdateEndingScreen(void)
     if (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP))
     {
         finishScreen = 1;
+        score = 0;
         PlaySound(fxCoin);
     }
 }

@@ -91,7 +91,7 @@ void InitGameplayScreen(void)
     // TODO: Initialize GAMEPLAY screen variables here!
     framesCounter = 0;
     finishScreen = 0;
-    GetRandomKeys();
+    framesDuration = 60 * 10;
     
     arrowTex = LoadTexture("resources/arrow.png");
     
@@ -213,6 +213,10 @@ static void SetWait()
 {
     score++;
     framesCounter = 0;
+    
+    if (framesDuration > 60*5)
+        framesDuration-= 5;
+    
     gameplayState = WAIT;
 }
 
@@ -256,6 +260,7 @@ static void UpdateSpace()
     if (IsKeyPressed(KEY_SPACE))
     {
         frontgroundBar.width += 15;
+        PlaySound(fxHit);
     }
     
     if (frontgroundBar.width <= 0)
@@ -288,7 +293,7 @@ static void DrawSpace()
         }break;
     }
     
-    DrawTextEx(font, "PRESS THE SPACEBAR TO CONTINUE WORKING", (Vector2){ 150, 400}, font.baseSize*2, 4, RED);
+    DrawTextEx(font, "PRESS THE SPACEBAR TO CONTINUE WORKING", (Vector2){ 150, 400}, font.baseSize*2, 4, BLACK);
     
     DrawRectangleRec(backgroundBar, GRAY);
     DrawRectangleRec(frontgroundBar, GREEN);
@@ -308,6 +313,7 @@ static void UpdateCircles()
     if (IsMouseButtonPressed(0) && CheckCollisionPointCircle(GetMousePosition(), circlePosition, radius))
     {
         currentCircle++;
+        PlaySound(fxHit);
          if (currentCircle > maxCircle)
          {
              SetWait();
@@ -349,7 +355,7 @@ static void DrawCircles()
         }break;
     }
     
-    DrawTextEx(font, "CLICK ON THE CIRCLES TO CONTINUE WORKING", (Vector2){ 140, 400  }, font.baseSize*2, 4, RED);
+    DrawTextEx(font, "CLICK ON THE CIRCLES TO CONTINUE WORKING", (Vector2){ 140, 400  }, font.baseSize*2, 4, BLACK);
     
     DrawCircleV(circlePosition, radius, GREEN);
     DrawCircleV(circlePosition, radiusClick, circleColor);
@@ -399,6 +405,7 @@ static void UpdateKeys()
             if (IsKeyPressed(KEY_UP))
             {
                 keyCorrect[currentKey] = true;
+                PlaySound(fxHit);
                 currentKey++;
             }
         }       
@@ -408,6 +415,7 @@ static void UpdateKeys()
             if (IsKeyPressed(KEY_DOWN))
             {
                 keyCorrect[currentKey] = true;
+                PlaySound(fxHit);
                 currentKey++;
             }
         }
@@ -417,6 +425,7 @@ static void UpdateKeys()
             if (IsKeyPressed(KEY_LEFT))
             {
                 keyCorrect[currentKey] = true;
+                PlaySound(fxHit);
                 currentKey++;
             }
         }
@@ -426,6 +435,7 @@ static void UpdateKeys()
             if (IsKeyPressed(KEY_RIGHT))
             {
                 keyCorrect[currentKey] = true;
+                PlaySound(fxHit);
                 currentKey++;
             }
         }
@@ -458,7 +468,7 @@ static void DrawKeys()
         }break;
     }
     
-    DrawTextEx(font, "PRESS THE CORRECT KEYS TO CONTINUE WORKING", (Vector2){ 120, 400 }, font.baseSize*2, 4, RED);
+    DrawTextEx(font, "PRESS THE CORRECT KEYS TO CONTINUE WORKING", (Vector2){ 120, 400 }, font.baseSize*2, 4, BLACK);
     
     
     DrawRectangleRec(timeBarBack, GRAY);

@@ -30,7 +30,10 @@
 // Module Variables Definition (local)
 //----------------------------------------------------------------------------------
 static int framesCounter = 0;
+static int secondsCounter = 0;
 static int finishScreen = 0;
+
+Texture2D titleTexture;
 
 //----------------------------------------------------------------------------------
 // Title Screen Functions Definition
@@ -42,12 +45,21 @@ void InitTitleScreen(void)
     // TODO: Initialize TITLE screen variables here!
     framesCounter = 0;
     finishScreen = 0;
+    
+    titleTexture = LoadTexture("resources/title.png");
 }
 
 // Title Screen Update logic
 void UpdateTitleScreen(void)
 {
     // TODO: Update TITLE screen variables here!
+    
+    framesCounter++;
+    if (framesCounter >= 60)
+    {
+        framesCounter = 0;
+        secondsCounter++;
+    }
 
     // Press enter or tap to change to GAMEPLAY screen
     if (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP))
@@ -64,6 +76,9 @@ void DrawTitleScreen(void)
     // TODO: Draw TITLE screen here!
     DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), GREEN);
     DrawTexture(backgroundTexture, 0, 0, GRAY);
+    DrawTexture(titleTexture, GetScreenWidth()/2 - titleTexture.width/2, GetScreenHeight()/5, RED);
+    if (secondsCounter % 2 ==  0)
+        DrawTextEx(font, "PRESS ENTER TO START THE GAMEJAM", (Vector2){ 175, 300 }, font.baseSize*2, 4, WHITE);
 
 }
 
@@ -71,6 +86,7 @@ void DrawTitleScreen(void)
 void UnloadTitleScreen(void)
 {
     // TODO: Unload TITLE screen variables here!
+    UnloadTexture(titleTexture);
 }
 
 // Title Screen should finish?

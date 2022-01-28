@@ -28,6 +28,7 @@ GameScreen currentScreen = 0;
 Font font = { 0 };
 Music music = { 0 };
 Sound fxCoin = { 0 };
+Sound fxHit = { 0 };
 Texture2D backgroundTexture = { 0};
 int maxScore = 0;
 int score = 0;
@@ -37,6 +38,8 @@ int score = 0;
 //----------------------------------------------------------------------------------
 static const int screenWidth = 800;
 static const int screenHeight = 450;
+
+static int currentScreenShoot = 0;
 
 // Required variables to manage screen transitions (fade-in, fade-out)
 static float transAlpha = 0.0f;
@@ -74,6 +77,7 @@ int main(void)
     font = LoadFont("resources/mecha.png");
     music = LoadMusicStream("resources/ambient.ogg");
     fxCoin = LoadSound("resources/coin.wav");
+    fxHit = LoadSound("resources/hit.wav");
     backgroundTexture = LoadTexture("resources/background.png");
 
     SetMusicVolume(music, 1.0f);
@@ -228,6 +232,12 @@ static void UpdateDrawFrame(void)
     // Update
     //----------------------------------------------------------------------------------
     UpdateMusicStream(music);       // NOTE: Music keeps playing between screens
+    
+    if (IsKeyPressed(KEY_F10))
+    {
+        TakeScreenshot(TextFormat("screenshoot_%i.png", currentScreenShoot));
+        currentScreenShoot++;
+    }
 
     if (!onTransition)
     {
@@ -267,7 +277,7 @@ static void UpdateDrawFrame(void)
             {
                 UpdateEndingScreen();
 
-                if (FinishEndingScreen() == 1) TransitionToScreen(TITLE);
+                if (FinishEndingScreen() == 1) TransitionToScreen(GAMEPLAY);
 
             } break;
             default: break;
