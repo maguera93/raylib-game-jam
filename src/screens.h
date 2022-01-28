@@ -30,6 +30,10 @@
 // Types and Structures Definition
 //----------------------------------------------------------------------------------
 typedef enum GameScreen { LOGO = 0, TITLE, OPTIONS, GAMEPLAY, ENDING } GameScreen;
+typedef enum {
+    STORAGE_POSITION_SCORE      = 0,
+    STORAGE_POSITION_HISCORE    = 1
+} StorageData;
 
 //----------------------------------------------------------------------------------
 // Global Variables Declaration (shared by several modules)
@@ -38,6 +42,9 @@ extern GameScreen currentScreen;
 extern Font font;
 extern Music music;
 extern Sound fxCoin;
+extern Texture2D backgroundTexture;
+extern int maxScore;
+extern int score;
 
 #ifdef __cplusplus
 extern "C" {            // Prevents name mangling of functions

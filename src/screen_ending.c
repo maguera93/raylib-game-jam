@@ -42,6 +42,12 @@ void InitEndingScreen(void)
     // TODO: Initialize ENDING screen variables here!
     framesCounter = 0;
     finishScreen = 0;
+    
+    if (score >= maxScore)
+    {
+        maxScore = score;
+        SaveStorageValue(STORAGE_POSITION_HISCORE, maxScore);
+    }
 }
 
 // Ending Screen Update logic
@@ -61,9 +67,10 @@ void UpdateEndingScreen(void)
 void DrawEndingScreen(void)
 {
     // TODO: Draw ENDING screen here!
-    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), BLUE);
-    DrawTextEx(font, "ENDING SCREEN", (Vector2){ 20, 10 }, font.baseSize*3, 4, DARKBLUE);
-    DrawText("PRESS ENTER or TAP to RETURN to TITLE SCREEN", 120, 220, 20, DARKBLUE);
+    DrawTexture(backgroundTexture, 0, 0, GRAY);
+    DrawTextEx(font, "YOU COULDN'T FINISH THE GAMEJAM ON TIME...", (Vector2){ 120, 400 }, font.baseSize*2, 4, WHITE);
+    DrawTextEx(font, TextFormat("SCORE: %i", score), (Vector2){ 300, 120 }, font.baseSize*4, 4, WHITE);
+    DrawTextEx(font, TextFormat("HIGH SCORE: %i", maxScore), (Vector2){ 250, 200 }, font.baseSize*4, 4, WHITE);
 }
 
 // Ending Screen Unload logic

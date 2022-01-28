@@ -14,6 +14,7 @@
 
 #include "raylib.h"
 #include "screens.h"    // NOTE: Declares global (extern) variables and screens functions
+#include "raymath.h"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -27,6 +28,9 @@ GameScreen currentScreen = 0;
 Font font = { 0 };
 Music music = { 0 };
 Sound fxCoin = { 0 };
+Texture2D backgroundTexture = { 0};
+int maxScore = 0;
+int score = 0;
 
 //----------------------------------------------------------------------------------
 // Local Variables Definition (local to this module)
@@ -62,11 +66,15 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "raylib game template");
 
     InitAudioDevice();      // Initialize audio device
+    
+    score = LoadStorageValue(STORAGE_POSITION_SCORE);
+    maxScore = LoadStorageValue(STORAGE_POSITION_HISCORE);
 
     // Load global data (assets that must be available in all screens, i.e. font)
     font = LoadFont("resources/mecha.png");
     music = LoadMusicStream("resources/ambient.ogg");
     fxCoin = LoadSound("resources/coin.wav");
+    backgroundTexture = LoadTexture("resources/background.png");
 
     SetMusicVolume(music, 1.0f);
     PlayMusicStream(music);
@@ -104,6 +112,7 @@ int main(void)
     UnloadFont(font);
     UnloadMusicStream(music);
     UnloadSound(fxCoin);
+    UnloadTexture(backgroundTexture);
 
     CloseAudioDevice();     // Close audio context
 
