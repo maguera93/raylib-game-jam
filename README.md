@@ -1,22 +1,6 @@
------------------------------------
+## Finishing Games Simulator
 
-_DISCLAIMER:_
-
-Welcome to **raylib game template**!
-
-This template provides a base structure to start developing a small raylib game in plain C. The repo is also pre-configured with a default `LICENSE` (zlib/libpng) and a `README.md` (this one) to be properly filled by users. Feel free to change the LICENSE as required.
-
-All the sections defined by `$(Data to Fill)` are expected to be edited and filled properly. It's recommended to delete this disclaimer message after editing this `README.md` file.
-
-This template has been created to be used with raylib (www.raylib.com) and it's licensed under an unmodified zlib/libpng license.
-
-_Copyright (c) 2014-2022 Ramon Santamaria ([@raysan5](https://twitter.com/raysan5))_
-
------------------------------------
-
-## $(Game Title)
-
-![$(Game Title)](screenshots/screenshot_4.png "$(Game Title)")
+![Finishing Games Simulator](screenshots/screenshot_4.png?raw=true "Finishing Games Simulator")
 
 ### Description
 
@@ -32,18 +16,16 @@ Keyboard:
 
 ### Screenshots
 
-$(screenshots/screenshot_0.png)
-$(screenshots/screenshot_1.png)
-$(screenshots/screenshot_2.png)
-$(screenshots/screenshot_3.png)
-$(screenshots/screenshot_5.png)
-$(screenshots/screenshot_6.png)
+!(screenshots/screenshot_0.png?raw=true)
+!(screenshots/screenshot_1.png?raw=true)
+!(screenshots/screenshot_2.png?raw=true)
+!(screenshots/screenshot_3.png?raw=true)
+!(screenshots/screenshot_5.png?raw=true)
+!(screenshots/screenshot_6.png?raw=true)
 
 ### Developers
 
- - $(Developer 01) - $(Role/Tasks Developed)
- - $(Developer 02) - $(Role/Tasks Developed)
- - $(Developer 03) - $(Role/Tasks Developed)
+ - Marc Agûera - Programmer
 
 ### Links
 
@@ -55,4 +37,4 @@ This game sources are licensed under an unmodified zlib/libpng license, which is
 
 $(Additional Licenses)
 
-*Copyright (c) $(Year) $(@maguera93) ($(GitHub Name))*
+*Copyright (c) 2022 - @maguera93*
