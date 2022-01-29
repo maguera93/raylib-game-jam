@@ -16,28 +16,28 @@ _Copyright (c) 2014-2022 Ramon Santamaria ([@raysan5](https://twitter.com/raysan
 
 ## $(Game Title)
 
-![$(Game Title)](screenshots/screenshot000.png "$(Game Title)")
+![$(Game Title)](screenshots/screenshot_4.png "$(Game Title)")
 
 ### Description
 
-$(Your Game Description)
-
-### Features
-
- - $(Game Feature 01)
- - $(Game Feature 02)
- - $(Game Feature 03)
+This is a game for the raylib gamejam and is about finishing a gamejam. The theme for the gamejam was "THAT WAS CLOSE" and reminded me about something that my teacher said when we failed at some task: "OOOOH, YOU TRIED AND YOU FAILED!".
+The mechanics of the game are 3 minigames displayer randomly.
 
 ### Controls
 
 Keyboard:
- - $(Game Control 01)
- - $(Game Control 02)
- - $(Game Control 03)
+ - PRESS THE SPACEBAR WHEN THE BAR APPEARS
+ - CLICK ON THE CIRCLES
+ - PRESS THE KEYS CORRECTLY
 
 ### Screenshots
 
-_TODO: Show your game to the world, animated GIFs recommended!._
+$(screenshots/screenshot_0.png)
+$(screenshots/screenshot_1.png)
+$(screenshots/screenshot_2.png)
+$(screenshots/screenshot_3.png)
+$(screenshots/screenshot_5.png)
+$(screenshots/screenshot_6.png)
 
 ### Developers
 
@@ -47,9 +47,7 @@ _TODO: Show your game to the world, animated GIFs recommended!._
 
 ### Links
 
- - YouTube Gameplay: $(YouTube Link)
- - itch.io Release: $(itch.io Game Page)
- - Steam Release: $(Steam Game Page)
+ - itch.io Release: $(https://maguera93.itch.io/finishing-games-simulator)
 
 ### License
 
@@ -57,4 +55,4 @@ This game sources are licensed under an unmodified zlib/libpng license, which is
 
 $(Additional Licenses)
 
-*Copyright (c) $(Year) $(User Name) ($(User Twitter/GitHub Name))*
+*Copyright (c) $(Year) $(@maguera93) ($(GitHub Name))*
