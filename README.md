@@ -1,6 +1,6 @@
 ## Finishing Games Simulator
 
-![Finishing Games Simulator](screenshots/screenshot_4.png?raw=true "Finishing Games Simulator")
+![Finishing Games Simulator](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_4.png?raw=true "Finishing Games Simulator")
 
 ### Description
 
@@ -16,12 +16,11 @@ Keyboard:
 
 ### Screenshots
 
-!(screenshots/screenshot_0.png?raw=true)
-!(screenshots/screenshot_1.png?raw=true)
-!(screenshots/screenshot_2.png?raw=true)
-!(screenshots/screenshot_3.png?raw=true)
-!(screenshots/screenshot_5.png?raw=true)
-!(screenshots/screenshot_6.png?raw=true)
+![](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_1.png?raw=true)
+![](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_2.png?raw=true)
+![](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_3.png?raw=true)
+![](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_5.png?raw=true)
+![](https://github.com/maguera93/raylib-game-jam/blob/main/screenshots/screenshoot_6.png?raw=true)
 
 ### Developers
 
